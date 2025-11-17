@@ -237,7 +237,7 @@ h6 {
 
   .navmenu a,
   .navmenu a:focus {
-    color: var(--nav-color);
+    /*color: var(--nav-color);*/
     padding: 18px 15px;
     font-size: 13px;
     text-transform: uppercase;
@@ -358,7 +358,7 @@ h6 {
 
   .navmenu a,
   .navmenu a:focus {
-    color: var(--nav-dropdown-color);
+    /*color: var(--nav-dropdown-color);*/
     padding: 10px 20px;
     font-family: var(--nav-font);
     font-size: 17px;
@@ -1382,10 +1382,11 @@ section,
   color: color-mix(in srgb, var(--default-color), transparent 70%);
 }
 
+/*
 .contact .php-email-form button[type=submit] {
   color: var(--contrast-color);
   background: var(--accent-color);
-  border: 0;
+  border: 100;
   padding: 10px 30px;
   transition: 0.4s;
   border-radius: 50px;
@@ -1394,7 +1395,7 @@ section,
 .contact .php-email-form button[type=submit]:hover {
   background: color-mix(in srgb, var(--accent-color), transparent 20%);
 }
-
+*/
 /*--------------------------------------------------------------
 # Portfolio Details Section
 --------------------------------------------------------------*/
