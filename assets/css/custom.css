@@ -44,12 +44,96 @@ a {
 
 .sectionn {    
     border-radius: 14px;    
-    box-shadow: 0 4px 14px rgba(0,0,0,0.08); 
+    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    animation: fadeIn 5s ease forwards;
 }
 
 .scroll-top {
     background-color: blue !important;
     color: white !important;
+}
+
+@keyframes scrollTopJumpy {
+  0%   { transform: translateY(0); }
+  30%  { transform: translateY(-6px); }
+  60%  { transform: translateY(0); }
+  80%  { transform: translateY(-3px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.scroll-top.active {
+  animation: scrollTopJumpy 1.4s cubic-bezier(.25,.9,.35,1) infinite;
+}
+/*
+@media (prefers-reduced-motion: reduce) {
+  .sectionn {    
+      animation: none;
+      opacity: 1;
+      transform: none;
+      border-radius: 14px;    
+      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+  }
+
+  .scroll-top.active {
+    animation: none;
+    transform: none;
+  }
+
+  .dots-loader span {
+    animation: none;
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+*/
+/* nzn karocia*/
+
+#services {
+  position: relative;
+  overflow: hidden; /* kad gradientas neikistų už ribų */
+  border-radius: 14px;
+  padding: 2.5rem 3rem;
+  
+  /* Gradientas */
+  background: linear-gradient(270deg, #ff7e5f, #feb47b, #86a8e7, #91eae4);
+  background-size: 800% 800%; /* didesnis už elementą, kad animacija judėtų sklandžiai */
+  
+  animation: gradientShift 15s ease infinite;
+}
+
+/* Bendras stilius item’ams */
+.pakeisti {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;         /* apskritimai */
+  background-color: #ff6f61;  /* spalva */
+  opacity: 0.7;
+  
+  animation: rotateScaleFloat 8s ease-in-out infinite;
+}
+
+/* Kiekvienam item’ui galima pritaikyti skirtingą delay */
+.pakeisti:nth-child(2) { animation-delay: 1s; left: 50%; top: 40%; }
+.pakeisti:nth-child(3) { animation-delay: 2s; left: 70%; top: 25%; }
+
+/* Animacijos kombinacija: sukimas + skalavimas + plūduriavimas */
+@keyframes rotateScaleFloat {
+  0%   { transform: rotate(0deg) scale(1) translate(0,0); }
+  25%  { transform: rotate(90deg) scale(1.2) translate(10px,-10px); }
+  50%  { transform: rotate(180deg) scale(1) translate(-10px,10px); }
+  75%  { transform: rotate(270deg) scale(1.2) translate(10px,10px); }
+  100% { transform: rotate(360deg) scale(1) translate(0,0); }
+}
+
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 .header {
@@ -94,3 +178,30 @@ a {
 .services-table tr:hover {
     background-color: #ddd;
 }
+
+/* krauna */
+.dots-loader {
+  display: flex;
+  gap: 6px;
+}
+
+.dots-loader span {
+  width: 8px;
+  height: 8px;
+  background: black;
+  border-radius: 50%;
+  animation: dotsPulse 1s ease-in-out 3;
+}
+
+
+
+.dots-loader span:nth-child(2) { animation-delay: 0.2s; }
+.dots-loader span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes dotsPulse {
+  0%   { transform: scale(1); opacity: 1; }
+  50%  { transform: scale(1.6); opacity: 0.4; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* krauyna */
