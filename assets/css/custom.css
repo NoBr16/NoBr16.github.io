@@ -193,6 +193,20 @@ a {
   animation: dotsPulse 1s ease-in-out 3;
 }
 
+#success-popup {
+  display: none;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #4caf50;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  z-index: 1000;
+  font-weight: bold;
+}
+
 
 
 .dots-loader span:nth-child(2) { animation-delay: 0.2s; }

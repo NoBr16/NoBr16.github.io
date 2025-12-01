@@ -907,38 +907,62 @@
 
         </div>
 
-        <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="300">
-          <div class="row gy-4">
-
-            <div class="col-md-6">
-              <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
-            </div>
-
-            <div class="col-md-6 ">
-              <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
-            </div>
-
-            <div class="col-md-12">
-              <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
-            </div>
-
-            <div class="col-md-12">
-              <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
-            </div>
-
-            <div class="col-md-12 text-center">
-              <div class="loading">Loading</div>
-              <div class="error-message"></div>
-              <div class="sent-message">Your message has been sent. Thank you!</div>
-
-              <button type="submit">Send Message</button>
-            </div>
-
-          </div>
-        </form><!-- End Contact Form -->
-
+    <form class="php-email-form" data-aos="fade-up" data-aos-delay="300">
+      <div id="form-error" style="color:red; font-weight:bold; margin-bottom:10px;"></div>
+      <div class="row gy-4" >
+      
+        <div class="col-md-6">
+          <input type="text" name="vardas" class="form-control" placeholder="Vardas" required>
+        </div>
+      
+        <div class="col-md-6">
+          <input type="text" name="pavarde" class="form-control" placeholder="Pavardė" required>
+        </div>
+      
+        <div class="col-md-6">
+          <input type="email" class="form-control" name="email" placeholder="El. paštas" required>
+        </div>
+      
+        <div class="col-md-6">
+          <input type="text" class="form-control" id="tel" name="tel" placeholder="Telefono numeris" required>
+        </div>
+      
+        <div class="col-md-12">
+          <input type="text" class="form-control" name="adresas" placeholder="Adresas" required>
+        </div>
+      
+        <!-- Vertinimo klausimai -->
+        <div class="col-md-12">
+          <label class="form-label">Kaip vertinate mūsų paslaugų kokybę? (1–10)</label>
+          <input type="number" name="klausimas1" class="form-control" min="1" max="10" required>
+        </div>
+      
+        <div class="col-md-12">
+          <label class="form-label">Kaip tikėtina, kad rekomenduotumėte mus kitiems? (1–10)</label>
+          <input type="number" name="klausimas2" class="form-control" min="1" max="10" required>
+        </div>
+      
+        <div class="col-md-12">
+          <label class="form-label">Kaip vertinate bendrą patirtį? (1–10)</label>
+          <input type="number" name="klausimas3" class="form-control" min="1" max="10" required>
+        </div>
+      
+        <div class="col-md-12 text-center">
+          <div class="loading">Loading</div>
+          <div class="error-message"></div>
+          <div class="sent-message">Your message has been sent. Thank you!</div>
+        
+          <button type="button" id="submitBtn">Submit</button>
+        </div>
+      
       </div>
+    </form>
 
+<div id="success-popup">
+      Duomenys pateikti sėkmingai!
+</div>
+    <div id="form-results" class="mt-4"></div>
+    
     </section><!-- /Contact Section -->
 
   </main>
@@ -986,6 +1010,7 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/custom.js"></script>
 
 </body>
 
